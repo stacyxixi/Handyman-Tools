@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MakeReservation</title>
+		<style type = "text/css">
+			      label.question  {
+						 width: 100px;
+						 float: left;
+						 text-align: left;
+						 font-weight: bold;
+					}
+					
+					a.button {
+						-webkit-appearance: button;
+						-moz-appearance: button;
+						appearance: button;
+						width: 200px;
+						text-align: center;
+
+						text-decoration: none;
+						color: initial;
+						margin: 10px;
+					}
+
+					a.exit {
+						-webkit-appearance: button;
+						-moz-appearance: button;
+						appearance: button;
+						width: 50px;
+						margin: 10px;
+						text-align: center;
+						
+
+						text-decoration: none;
+						color: initial;
+					}	
+
+					p.Type{
+						margin-top: 50px;
+					}
+					
+					
+					span.Type{
+						margin-right : 200px;
+						
+					}
+		
+		</style>
+	
+	
+	</head>
+	
+	<body>
+		<h1>Make Reservation</h1>
+		<form name = "newuser" method = "post" action = "newuser.php">
+			<p>
+				<label class = "question">Staring Date</label>
+				<input type = "text" placeholder = "starting date" size = 50 required autofocus />
+					
+			</p>
+			
+			<p>
+				<label class = "question">Ending Date</label>
+				<input type = "text" placeholder = "Ending date" size = 50 required  />
+					
+			</p>
+			<p class = "Type">
+				<span class = "Type">Type of Tool</span>	
+				<span class = "Tool">Tool</span>
+			</p>
+			
+			<p >
+				<span class = "Type">
+					<select name='typeoftool' >
+						<option value='ht' selected>hand tools</option>
+						<option value='ct'>construction tools</option>
+						<option value='pt'>power tools</option>
+					</select>
+				
+				</span>	
+				<span class = "Type">
+					<select name='tool' >
+
+					</select>
+				
+				</span>	
+			</p>			
+			
+		</form>
+		
+		
+		<a class="button" href="">Add More Tools</a>
+		<a class="button" href="">Remove Last Tool</a><br>
+		<a class="button" href="">Calculate Total</a><br>
+
+		
+		
+	
+	
+	</body>
+
+</html>

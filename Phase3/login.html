@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Login</title>
+		<link rel="stylesheet" href="css/handystylesheet.css" >
+	
+	
+	</head>
+	
+	<body>
+		<form name = "login" method = "post" action = "login.php">
+		
+		<p>
+			<label for="login" class = "question">Login</label>
+			<input id="login" type = "email" placeholder = "Enter your email address" size = 50 required autofocus />
+				
+		</p>
+		
+		<p>
+			<label for="password" class = "question">Password</label>
+			<input type = "Password" id="password" placeholder = "Enter your password" size = 50 required  />
+				
+		</p>
+		
+		<p class="userchoice"> 
+			<label for="clerk">Clerk</label>
+			<input  type = "radio" id = "clerk" name = "clerk">
+			<label for="customer"> Customer</label>
+			<input type = "radio" id = "customer" name = "customer">
+		
+		</p>
+		
+		<div>
+			<input type = "submit" value = "Enter" class="submit">
+		</div>
+		
+		
+		
+		</form>
+	
+	
+	</body>
+
+</html>

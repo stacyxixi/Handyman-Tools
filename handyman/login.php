@@ -43,8 +43,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$password = mysql_real_escape_string($_POST['password']);
 
 		
-
-		$query = "SELECT * FROM customer WHERE Username = '$email' AND password = '$password'";
+                switch($_POST['radio_group1']){
+                    case "customer":
+                        $query = "SELECT * FROM customer WHERE Username = '$email' AND password = '$password'";
+                        break;
+                    case "clerk":
+                        $query = "SELECT * FROM clerk WHERE Username = '$email' AND password = '$password'";
+                        break;
+                }
+		
 
 		$result = mysql_query($query);
 
@@ -74,12 +81,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			session_start();
 
-			$_SESSION['email'] = $email;
+			
                         switch($_POST['radio_group1']){
                             case "customer":
+                                $_SESSION['email'] = $email;
                                 header('Location: customerMenu.php');
                                 break;
                             case "clerk":
+                                $_SESSION['clerk'] = $email;
                                 header('Location: clerkMenu.php');
                                 break;
                             default:

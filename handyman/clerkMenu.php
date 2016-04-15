@@ -24,7 +24,7 @@ mysql_select_db("handyman") or die( "Unable to select database");
 $errorMsg = "";
 session_start();
 
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['clerk'])) {
 
 	header('Location: login.php');
 

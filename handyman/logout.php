@@ -9,7 +9,7 @@
     session_unset();
     session_destroy();
     if (isset($_SESSION['email'])){
-        header("location:fuck.php");
+        header("location:error.php");
     }else{
         header("location:login.php");
     }

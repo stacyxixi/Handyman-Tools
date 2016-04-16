@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			/* login successful */
 
-			session_start();
+//			session_start();
 
 			$_SESSION['rnumber'] = $rnumber;
                         header('Location: pickUpDetail.php');

@@ -1,30 +1,28 @@
-<?php
+<form action="?" method="get"> ID Number: <input
+type="text" name="idnumber" /><br/>
+<input type="submit" value="Whats my
+email address" /> </form> <p>Your
+email address is
+<?php echo isset($_GET['idnumber']) ? htmlspecialchars($_GET['idnumber']) : ''; ?>@email.com</p>
 
+<html>
+<head>
+<title>Dynamic Form</title>
+<script language="javascript">
+var i = 1;
+function changeIt()
+{
 
-error_reporting(E_ALL ^ E_DEPRECATED);
-
-/* connect to database */	
-
-$connect = mysql_connect("localhost", "root", "");
-
-if (!$connect) {
-
-	die("Failed to connect to database");
-
+my_div.innerHTML = my_div.innerHTML +"<br><input type='text' name='mytext'+ i>"
+i++;
 }
+</script>
+</head>
+<body>
 
-mysql_select_db("handyman") or die( "Unable to select database");
+<form name="form" action="post" method="">
+<input type="text" name=t1>
+<input type="button" value="test" onClick="changeIt()">
+<div id="my_div"></div>
 
-$errorMsg = "";
-$emptyMsg = "";
-
-session_start();
-
-if (!isset($_SESSION['email'])) {
-
-	header('Location: login.php');
-
-	exit();
-
-}
-?>
+</body>

@@ -50,8 +50,17 @@ if (!$resultx) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['view_details'])){
-        header('Location: tooldetails.php');
-        exit();
+        if (empty($_POST['Tool_ID'])){
+            $errorMsg = "Please provide Tool ID.";
+        } 
+        else{
+            $_SESSION['Tool_ID'] = $_POST['Tool_ID'];
+            header('Location: tooldetails.php');
+            exit();
+        }
+        
+        
+        
     }
     if (isset($_POST['back_to_main'])){
         header('Location: customerMenu.php');
@@ -111,7 +120,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                                     <th>Abbr. Description</th>		
                                                                     <th>Deposit ($)</th>
                                                                     <th>Price/Day ($)</th>
-                                                                    <th>Date</th>
                                                                 </tr>
                                                             </thead>
 
@@ -123,7 +131,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                                                     print '<td>'. $rowx['Abbrdesc'].'</td>';
                                                                     print '<td>'. $rowx['Deposit'].'</td>';
                                                                     print '<td>'. $rowx['Rental'].'</td>';
-                                                                    print '<td>'.$start_date.'</td>';
                                                                     print '<tr>';
                                                                 }
                                                             ?>

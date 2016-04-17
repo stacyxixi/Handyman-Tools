@@ -44,8 +44,19 @@
 		   $query .= ")";
 		   $result = mysql_query($query, $connect);
 		   
+		   $acc_array = explode(";", $accessories);
+		   $tool_id = mysql_insert_id();
+		   
+		   foreach ($acc_array as $acc) {
+			   $query2 = "INSERT INTO accessories (";
+			   $query2 .= "Tool_ID, Accessories";
+			   $query2 .= ") VALUES (";
+		       $query2 .= "{$tool_id} ,'{$acc}'";
+			   $query2 .= ")";
+			   $result2 = mysql_query($query2, $connect);
+		   }
 		   // test if there was a query error
-		   if ($result) { 
+		   if ($result && $result2) { 
 			  header("Location: " . "addnewtool.php");
 			  exit;
 		   } else {

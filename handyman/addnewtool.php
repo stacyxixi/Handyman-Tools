@@ -65,6 +65,10 @@
 			
 		}
    }
+   else if (isset($_POST["back"])) {
+	   header('Location: clerkMenu.php');
+	   exit;
+   }
 ?>
 
 
@@ -95,6 +99,7 @@
 	<input style="height:30px; width:400px" type= "text" name="accessories" value="" /><br />
 	 <br />
 	 <input type="submit" name="submit" value="Submit" />
+	 <input type="submit" name="back" value="Main Menu" />
 	</form>	
 	
   </body>

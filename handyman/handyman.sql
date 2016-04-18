@@ -109,14 +109,14 @@ INSERT INTO `customer` (`Username`, `Password`, `Fname`, `Lname`, `Work_area_cod
 
 DROP TABLE IF EXISTS `reservation`;
 CREATE TABLE IF NOT EXISTS `reservation` (
-  `Reservation_Number` int(11) NOT NULL,
+  `Reservation_Number` int(11) NOT NULL AUTO_INCREMENT,
   `Start_date` date NOT NULL,
   `End_date` date NOT NULL,
   `Request_customer` varchar(36) NOT NULL,
-  `Pickup_clerk` varchar(16) NOT NULL,
-  `Dropoff_clerk` varchar(16) NOT NULL,
-  `Pickup_creditcard_number` char(16) DEFAULT NULL,
-  `Pickup_creditcard_expdate` date NOT NULL,
+  `Pickup_clerk` varchar(16) NULL,
+  `Dropoff_clerk` varchar(16) NULL,
+  `Pickup_creditcard_number` char(16) NULL,
+  `Pickup_creditcard_expdate` date NULL,
   PRIMARY KEY (`Reservation_Number`),
   KEY `Request_customer` (`Request_customer`),
   KEY `Pickup_clerk` (`Pickup_clerk`),

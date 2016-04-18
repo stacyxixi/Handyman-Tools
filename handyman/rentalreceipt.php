@@ -190,10 +190,10 @@ $rowy = mysql_fetch_array($resulty);
                                                 <br>
                                                                                                
                                             <div class="title"><font size="4"><b>Tool Rented:</b></font></div>
-                                                <div class="text"><font size="4"><b>Rental Price:</b><?php print $rowy['depo']; ?></font></div> 
-                                                <div class="text"><font size="4"><b>Deposit Held:</b><?php print '-'.$rowy['rent']; ?></font></div>
+                                                <div class="text"><font size="4"><b>Rental Price:</b><?php print $rowy['rent']; ?></font></div> 
+                                                <div class="text"><font size="4"><b>Deposit Held:</b><?php print '-'.$rowy['depo']; ?></font></div>
                                                 <br></br>
-                                                <div class="text"><font size="4"><b>Total:</b><?php print $rowy['depo']; ?></font></div> 
+                                                <div class="text"><font size="4"><b>Total:</b><?php print $rowy['rent']-$rowy['depo']; ?></font></div> 
                                             
 
                                                 </br>

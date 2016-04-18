@@ -213,8 +213,8 @@ function check_date($expdate)
                                                 $resulty = mysql_query($queryy);
                                                 $rowy = mysql_fetch_array($resulty)
                                                 ?>
-                                                <div class="text"><font size="4"><b>Deposit Required:</b><?php print $rowy['rent']; ?></font></div>
-                                                <div class="text"><font size="4"><b>Estimated Cost:</b><?php print $rowy['depo']; ?></font></div>
+                                                <div class="text"><font size="4"><b>Deposit Required:</b><?php print $rowy['depo']; ?></font></div>
+                                                <div class="text"><font size="4"><b>Estimated Cost:</b><?php print $rowy['rent']; ?></font></div>
                                                 <hr>
                                                 <div>
                                                     <form action= "pickUpDetail.php" method ="post">

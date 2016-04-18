@@ -230,8 +230,8 @@ $rowy = mysql_fetch_array($resulty);
 							
 
 						</div>
-                                                <div class="text"><font size="4"><b>Deposit Held:</b><?php print $rowy['rent']; ?></font></div>
-                                                <div class="text"><font size="4"><b>Estimated Rental:</b><?php print $rowy['depo']; ?></font></div>                                            
+                                                <div class="text"><font size="4"><b>Deposit Held:</b><?php print $rowy['depo']; ?></font></div>
+                                                <div class="text"><font size="4"><b>Estimated Rental:</b><?php print $rowy['rent']; ?></font></div>                                            
                                             
                                                 <div class="title">
                                                     <table width="40%">

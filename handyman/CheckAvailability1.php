@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             case "Hand Tools":
                 $Tool_Type = "Hand Tools";
                 break;
-            case "Construction Equipment":
-                $Tool_Type = "Construction Equipment";
+            case "Construction":
+                $Tool_Type = "Construction";
                 break;
             case "Power Tools":
                 $Tool_Type = "Power Tools";
@@ -160,7 +160,7 @@ function past_date($expdate)
                                                 <hr>
                                                 <input type="radio" name="radio_group1" value="Hand Tools" checked ="checked" />Hand Tools
                                                 <br>
-                                                <input type="radio" name="radio_group1" value="Construction Equipment" />Construction Equipment
+                                                <input type="radio" name="radio_group1" value="Construction" />Construction
                                                 <br>
                                                 <input type="radio" name="radio_group1" value="Power Tools" />Power Tools
                                                 <hr>

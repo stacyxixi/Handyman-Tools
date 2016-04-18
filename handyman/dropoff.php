@@ -59,8 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $queryx = "UPDATE RESERVATION SET Dropoff_clerk = '$clerk' WHERE Reservation_Number = '$rnumber'"; 
                 $resultx = mysql_query($queryx);
 
-                session_start();
-
+                
                 $_SESSION['rnumber'] = $rnumber;
                 header('Location: rentalreceipt.php');
 

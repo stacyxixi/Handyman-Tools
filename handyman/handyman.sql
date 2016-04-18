@@ -145,7 +145,7 @@ INSERT INTO `reservation` (`Reservation_Number`, `Start_date`, `End_date`, `Requ
 DROP TABLE IF EXISTS `reserve`;
 CREATE TABLE IF NOT EXISTS `reserve` (
   `Reservation_number` int(11) NOT NULL,
-  `Tool_ID` int(11) NOT NULL,
+  `Tool_ID` int NOT NULL,
   PRIMARY KEY (`Reservation_number`,`Tool_ID`),
   KEY `Tool_ID` (`Tool_ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -172,7 +172,7 @@ INSERT INTO `reserve` (`Reservation_number`, `Tool_ID`) VALUES
 
 DROP TABLE IF EXISTS `service_order`;
 CREATE TABLE IF NOT EXISTS `service_order` (
-  `Tool_ID` int(11) NOT NULL,
+  `Tool_ID` int NOT NULL,
   `Start_date` date NOT NULL,
   `End_date` date NOT NULL,
   `Repair_cost` decimal(10,2) NOT NULL,
@@ -196,7 +196,7 @@ INSERT INTO `service_order` (`Tool_ID`, `Start_date`, `End_date`, `Repair_cost`)
 
 DROP TABLE IF EXISTS `tool`;
 CREATE TABLE IF NOT EXISTS `tool` (
-  `Tool_ID` varchar(11) NOT NULL,
+  `Tool_ID` int NOT NULL AUTO_INCREMENT,
   `Abbrdesc` varchar(50) NOT NULL,
   `Fulldesc` varchar(100) NOT NULL,
   `Tool_Type` varchar(50) NOT NULL,

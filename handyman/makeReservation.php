@@ -1,28 +1,30 @@
-<form action="?" method="get"> ID Number: <input
-type="text" name="idnumber" /><br/>
-<input type="submit" value="Whats my
-email address" /> </form> <p>Your
-email address is
-<?php echo isset($_GET['idnumber']) ? htmlspecialchars($_GET['idnumber']) : ''; ?>@email.com</p>
+<?php
+
+DEFINE ('DB_USER', 'root');
+DEFINE ('DB_PASSWORD', '');
+DEFINE ('DB_HOST', 'localhost');
+DEFINE ('DB_NAME', 'handyman');
+// Make the connection:
+$dbc = mysqli_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ('Could not connect to MySQL: ' . mysqli_connect_error() );
+$errorMsg = "";
+
+?>
 
 <html>
-<head>
-<title>Dynamic Form</title>
-<script language="javascript">
-var i = 1;
-function changeIt()
-{
+    <head>
+        
+       
 
-my_div.innerHTML = my_div.innerHTML +"<br><input type='text' name='mytext'+ i>"
-i++;
-}
-</script>
-</head>
-<body>
-
-<form name="form" action="post" method="">
-<input type="text" name=t1>
-<input type="button" value="test" onClick="changeIt()">
-<div id="my_div"></div>
-
-</body>
+    </head> 
+    <body>
+        <h1>Make Reservation</h1>
+        <label>Type of Tool</label>
+        <select id="toolType"></select>
+        <br>
+        <label>Tool</label>
+        <select id="tool"></select>
+        <script src="scripts/jquery-1.12.3.min.js"></script>
+        <script src ="scripts/script.js"></script>
+    </body>
+    
+</html>

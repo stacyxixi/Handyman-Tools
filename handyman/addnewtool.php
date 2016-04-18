@@ -31,7 +31,7 @@
 	   $full_desc = $_POST["full_desc"];
 	   $tool_type = $_POST["toolType"];
 	   $accessories = $_POST["accessories"];
-	   if ($tool_type != "power_tool"  && !empty($accessories)) {
+	   if ($tool_type != "Power Tools"  && !empty($accessories)) {
 		   echo "<font color = 'red'>Input accessories for non power tool.<br />";
 		   echo "Please check and reinput the information of the tool.</font color>";
 	   }
@@ -42,26 +42,36 @@
 		   $query .= " '{$abbr_desc}', '{$full_desc}', '{$tool_type}', {$purchase_price}, {$deposit}, 
 		                {$rental_price}, '{$clerk}'";
 		   $query .= ")";
-		   $result = mysql_query($query, $connect);
+		   $result = mysql_query($query);
 		   
-		   $acc_array = explode(";", $accessories);
-		   $tool_id = mysql_insert_id();
+                   
+                   if (!empty($_POST["accessories"])){
+                        $acc_array = explode(";", $accessories);
+                        $tool_id = mysql_insert_id();
 		   
-		   foreach ($acc_array as $acc) {
-			   $query2 = "INSERT INTO accessories (";
-			   $query2 .= "Tool_ID, Accessories";
-			   $query2 .= ") VALUES (";
-		       $query2 .= "{$tool_id} ,'{$acc}'";
-			   $query2 .= ")";
-			   $result2 = mysql_query($query2, $connect);
-		   }
+                         foreach ($acc_array as $acc) {
+                            $query2 = "INSERT INTO accessories (";
+                            $query2 .= "Tool_ID, Accessories";
+                            $query2 .= ") VALUES (";
+                            $query2 .= "{$tool_id} ,'{$acc}'";
+                            $query2 .= ")";
+                            $result2 = mysql_query($query2);
+                        }    
 		   // test if there was a query error
-		   if ($result && $result2) { 
-			  header("Location: " . "addnewtool.php");
-			  exit;
-		   } else {
-			   die("<font color = 'red'>database query failed. " . mysql_error($connect)) . "</font color>";
-		   }
+                        if ($result && $result2) { 
+                               header("Location: " . "addnewtool.php");
+                               exit;
+                        } else {
+                                die("<font color = 'red'>database query failed. " . mysql_error($connect)) . "</font color>";
+                        }
+                   }
+                    if ($result) { 
+                        header("Location: " . "addnewtool.php");
+                        exit();
+                    } else {
+                        die("<font color = 'red'>database query failed. " . mysql_error($connect)) . "</font color>";
+                        }
+		   
 			
 		}
    }
@@ -89,9 +99,9 @@
 	Tool Type: <br />
 	<select name="toolType">
 	  <option value="">Select...</option>
-	  <option value="constr_tool">Construction</option>
-	  <option value="hand_tool">Hand tool</option>
-	  <option value="power_tool">Power tool</option>
+	  <option value="Construction">Construction</option>
+	  <option value="Hand Tools">Hand tools</option>
+	  <option value="Power Tools">Power tools</option>
 	</select>
 	</p>
 	If new item is a power tool, input accessories separated by ";":

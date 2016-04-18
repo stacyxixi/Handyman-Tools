@@ -31,11 +31,8 @@ if (!isset($_SESSION['email'])) {
 	exit();
 
 }
-$tools = array();
-$tool = $_SESSION["tool1"];
-$tool = explode(";", $tool);
-$tool = $tool[0];
-array_push($tools, $tool);
+$t = $_SESSION["tools"];
+$tools = explode(",", $t);
 
 $startdate = $_SESSION["start_date"];
 $enddate = $_SESSION["end_date"];

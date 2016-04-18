@@ -45,10 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
             $end_date =$_GET["end_date"];
             $_SESSION['end_date'] = $end_date;
 	}
-    if (!empty($_GET['tool1'])) {
+    if (!empty($_GET['tools'])) {
 
-            $tool1 =$_GET["tool1"];
-            $_SESSION['tool1'] = $tool1;
+            $tools =$_GET["tools"];
+            $_SESSION['tools'] = $tools;
             header('Location: reservationSum.php');
 	}
     
@@ -118,8 +118,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         </table>       
         <script src="scripts/jquery-1.12.3.min.js"></script>
         <script src ="scripts/script.js"></script>
-        
-        
+        <p>Input tools separated by ",":</p>
+	
+	<br />
+            <input type="text" name ="tools"/>  
             <input type="submit" form = "form1" value="Calculate Total"/>  
         </form>
     </body>
